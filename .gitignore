@@ -1,0 +1,20 @@
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+.env
+help.txt
+
+# Coveralls
+.nyc_output
+coverage
+
+#Sequelize
+sequelizeData.json
+
+# Benchmarking
+benchmarks/graphs
+
+# ignore additional files using core.excludesFile
+# https://git-scm.com/docs/gitignore
