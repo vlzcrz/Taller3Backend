@@ -23,8 +23,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: "{{defaultContext}}"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/taller3backend:latest , ${{ secrets.DOCKERHUB_USERNAME }}/taller3backend:${{ github.sha }}
           build-args: |
