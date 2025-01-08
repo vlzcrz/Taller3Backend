@@ -24,6 +24,13 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-# Asegúrate de que la ruta es correcta{ secrets.DB_PASSWORD }}
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/taller3backend:latest , ${{ secrets.DOCKERHUB_USERNAME }}/taller3backend:${{ github.sha }}
+          build-args: |
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_PORT=${{ secrets.DB_PORT }}
+            DB_USER=${{ secrets.DB_USER }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
             DB_DATABASE=${{ secrets.DB_DATABASE }}
             TOKEN_SECRET=${{ secrets.TOKEN_SECRET}}
